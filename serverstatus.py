@@ -28,13 +28,13 @@ def get_status(server="Tumtum"):
                 server_index = i
 
         if server_index == -1:
-            message = server+f""" is not a valid server name.
+            message = f"""{server} is not a valid server name.
             Please make sure the name matches exactly what is shown on the server list ({url})."""
             return message
 
         server_status_classes = server_list[server_index].div.div.get('class')
         if 'ags-ServerStatus-content-responses-response-server-status--full' in server_status_classes:
-            print(server+" is FULL.")
+            print(f"{server} is FULL.")
             print(last_update)
             print("Checking again in 30 seconds.")
             print("—"*60)
@@ -42,4 +42,9 @@ def get_status(server="Tumtum"):
         if 'ags-ServerStatus-content-responses-response-server-status--up' in server_status_classes:
             print(server+" is NOT full!")
             full = False
+        if 'ags-ServerStatus-content-responses-response-server-status--maintenance' in server_status_classes:
+            print(f"{server} is under maintenance right now.")
+            print(last_update)
+            print("—"*60)
+            time.sleep(60)
     return
