@@ -57,7 +57,7 @@ def main(server: str = "Aaru"):
             val_resp = True
             time.sleep(60)
         if "Character transfer is unavailable" in server_statuses:
-            print("Character transfer is currently unavailable for this server.")
+            print(f"Character transfer is currently unavailable for {server}.")
             full = False
             val_resp = True
         if not val_resp:
