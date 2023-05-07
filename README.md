@@ -4,13 +4,21 @@ A simple web scraper used to check if a New World server is full. Default argume
 
 ### Usage
 
+CLI examples:
+```
+python status.py -s Isabella
+```
+```
+python status.py -s "El Dorado"
+```
+
 In an active Python environment/instance:
 ```
-import serverstatus
-serverstatus.get_status()
+import status
+status.get_status()
 ```
 This will check Tumtum by default. To check another server, such as City of Brass:
 ```
 serverstatus.get_status("City of Brass")
 ```
-Note that the checker is case sensitive.
+Note that the server name is case sensitive.
